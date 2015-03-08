@@ -18,16 +18,17 @@ module.exports=renderable (params)->
 			meta charset:'utf-8'
 			meta name:'viewport',content:'width=device-width,initial-scale=1,maximum-scale=1' #??? Which?
 			title 'Device mockup frame'
-			#??? Inline stylesheets for distribution.
+			link rel:'stylesheet',href:'lib/iosdevices.min.css'
 	body ->
-		div ->
-			h1 'Device Mockups'
-			ul ->
-				li ->label -> #??? Use helper!?
-					input name:'device',type:'radio',value:'iphone',checked:'checked'
-					text 'iPhone'
-				li ->label ->
-					input name:'device',type:'radio',value:'tablet'
-					text 'tablet'
-			iframe src:'app-mockup.html',border:'0',frameborder:'0',scrolling:'0',marginwidth:'0',marginheight:'0' #??? Defaults?
+		h1 'Device Mockups'
+		ul ->
+			li ->label -> #??? Use helper!?
+				input name:'device',type:'radio',value:'iphone',checked:'checked'
+				text 'iPhone'
+			li ->label ->
+				input name:'device',type:'radio',value:'tablet'
+				text 'tablet'
+		div '.device.ios-device.ios-device--large.iphone-4s.ios-device--has-shadow',->
+			div '.screen.ios-device__screen',->
+				iframe src:'app-mockup.html',border:'0',frameborder:'0',scrolling:'0',marginwidth:'0',marginheight:'0' #??? Defaults?
 		#??? script src:'//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js' #??? Fallback to local? Sizzle?

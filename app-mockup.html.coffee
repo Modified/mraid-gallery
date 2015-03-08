@@ -13,9 +13,9 @@ module.exports=renderable (params)->
 			meta name:'adsize',content:'width:300,height:250' #??? Standard?
 			#??? Inline stylesheets for distribution.
 	body ->
-		section '#ad-unit',->
+		section '#unit',-> # Ad unit, MRAID container?
 			iframe src:'gallery.html',border:'0',frameborder:'0',scrolling:'0',marginwidth:'0',marginheight:'0' #??? Defaults?
-		button '#ad-button',type:'button','Open Ad'
+		button type:'button','Open Ad'
 		div '#corporate-ipsum',->
 			p '''Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.'''
 			p '''Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions.'''
@@ -27,3 +27,9 @@ module.exports=renderable (params)->
 		#??? Inline scripts for distribution.
 		script src:'//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js' #??? Fallback to local? Sizzle?
 		script src:'lib/mraid.js'
+		coffeescript ->
+			$ ->
+				$ 'button'
+				.click ->
+					$ '#unit'
+					.show()
