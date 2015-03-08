@@ -31,6 +31,7 @@ build_styl=(next)->
 	options=['--compress'] #??? Map only in development? ,'--firebug' produces tons of junk!
 	options=options.concat [
 		'gallery.styl'
+		'app-mockup.styl'
 		]
 	#??? options.unshift '--watch' if watch #???!!! Does not daemonize, doesn't exit!
 	launch 'stylus',options,next
