@@ -1,0 +1,6 @@
+# Editor backups.
+*~
+*.bak
+
+# Generated or tmp.
+ad-unit/
