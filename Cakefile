@@ -36,8 +36,12 @@ build_styl=(next)->
 	launch 'stylus',options,next
 # Generate HTML from Teacup templates.
 build_teacup=(next)->
-	options=[]
-	exec 'coffee -e \'console.log (require "./index.html.coffee")()\'>index.html' # "./" required to include cwd.
+	cmd='for f in *.html.coffee; do coffee -e "console.log (require \'./$f\')()">${f%%.coffee}; done'
+	console.log 'exec'.cyan,cmd
+	#??? options=[]
+	exec cmd,(err,stdout,stderr)-> # "./" required to include cwd.
+		console.log 'coffee -e:',{err,stdout,stderr}
+		unless err then next() else console.log ':-('.red.inverse
 # Run process, not in shell. #??? exec instead?
 launch=(cmd,options=[],next)->
 	console.log 'spawn'.cyan,cmd,options,'...'

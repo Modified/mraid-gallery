@@ -1,5 +1,5 @@
-### index.html.coffee
-MRAID-Gallery: index.html teacup template.
+### gallery.html.coffee
+MRAID-Gallery: gallery.html teacup template.
 ###
 {renderable,normalizeArgs,comment,doctype,html,head,title,link,meta,script,body,section,div,span,em,strong,i,b,p,q,nav,header,footer,h1,h2,h3,a,img,form,input,label,button,select,option,fieldset,ol,ul,li,table,tr,th,td,text,raw,tag,iframe,br,coffeescript}=require 'teacup'
 util=require 'util' #??? Debugging?
@@ -22,7 +22,6 @@ module.exports=renderable (params)->
 		#??? Inline scripts for distribution.
 		script src:'//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js' #??? Fallback to local? Sizzle?
 		script src:'lib/slick/slick.min.js' #??? Defer?
-		script src:'lib/mraid.js' #??? Emulation; remove when building!
 		coffeescript ->
 			$ ->
 				$ '#gallery'
