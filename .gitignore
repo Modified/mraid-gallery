@@ -3,4 +3,8 @@
 *.bak
 
 # Generated or tmp.
-ad-unit/
+dist/
+*.html
+#??? But, maybe I want to be warned about untracked libraries?
+#??? *.css
+#??? *.js
